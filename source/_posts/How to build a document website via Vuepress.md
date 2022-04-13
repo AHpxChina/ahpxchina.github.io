@@ -1,7 +1,8 @@
 ---
 title: 'How to Build a document site by Vuepress'
 date: 2021-08-27 22:00:00
-tags: Web
+tags: ["VuePress", "documenting"]
+categories: web
 ---
 
 # How to Build a document site by Vuepress
@@ -207,7 +208,7 @@ themeConfig: {
     { text: 'Home', link: '/' },
     { text: 'Guide', link: '/guide/' },
     { text: 'External', link: 'https://google.com' },
-  ],
+  ]
 }
 ```
 

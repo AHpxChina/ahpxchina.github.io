@@ -2,6 +2,7 @@
 title: 'How to fix the problem that process.Exited handler will not execute'
 date: 2021-08-27 22:22:00
 tags: CSharp
+categories: dev
 ---
 
 As the code below:
