@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+  <!-- Html Head Tag-->
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="AHpx">
+  <!-- Open Graph Data -->
+  <meta property="og:title" content="Dynamically convert JSON to C# object(Chinese)"/>
+  <meta property="og:description" content="Movie, Rock, Book, Coding, My life" />
+  <meta property="og:site_name" content="AHpx&#39;s Blog"/>
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://sinoahpx.github.io"/>
+  
+    <link rel="alternate" href="/atom.xml" title="AHpx&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+
+  <!-- Site Title -->
+  <title>AHpx's Blog</title>
+
+  <!-- Bootstrap CSS -->
+  
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+  <!-- Custom CSS -->
+  
+  
+<link rel="stylesheet" href="/css/style.light.css">
+
+
+  <!-- Google Analytics -->
+  
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+  <body>
+    <!-- Page Header -->
+
+
+<header class="site-header header-background" style="background-image: url(/img/last_sunsetting_2021.png)">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="page-title with-background-image">
+          <p class="title">Dynamically convert JSON to C# object(Chinese)</p>
+          <p class="subtitle"></p>
+        </div>
+        <div class="site-menu with-background-image">
+          <ul>
+            
+              <li>
+                <a href="/">
+                  
+                  Home
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  
+                  Archives
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/works">
+                  
+                  Works
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a target="_blank" rel="noopener" href="https://twitter.com/AHpxEx">
+                  
+                  Twitter
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a target="_blank" rel="noopener" href="https://github.com/SinoAHpx">
+                  
+                  Github
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="mailto:AHpx@yandex.com">
+                  
+                  Email
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/about">
+                  
+                  About
+                  
+                </a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<article>
+  <div class="container typo">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-info text-muted">
+          
+            <!-- Author -->
+            <span class="author info">By AHpx</span>
+          
+          <!-- Date -->
+          <span class="date-time info">On
+            <span class="date">2021-08-27</span>
+            <span class="time">00:28:21</span>
+          </span>
+          
+          <!--  Categories  -->
+            <span class="categories info">Under 
+
+<a href="/categories/dev/">dev</a>
+</span>
+          
+        </div>
+        <!-- Tags -->
+        
+          <div class="post-tags text-muted">
+            Tags: 
+
+<a class="tag" href="/tags/CSharp/">#CSharp</a>
+
+
+          </div>
+        
+        <!-- Post Main Content -->
+        <div class="post-content">
+          <h2 id="Scenario"><a href="#Scenario" class="headerlink" title="Scenario"></a>Scenario</h2><p>最近在重构一个mirai-api-http的C#包装器，好尝试一些以前没有使用过的技术（比如Rx.Net的IObservable接口什么的）。所以我对一些旧有的实现方式进行了一些思考。这篇文章要探讨的场景就是下面这张图片，我们该如何以更简单和优雅的方式来实现同样的需求呢？</p>
+<p><img src="https://i.loli.net/2021/07/30/agTRdQkpHlxoUXZ.png"></p>
+<p>首先我们来分析这个场景的逻辑。这个方法有一个<code>string</code>参数传进来，它是一个json文本，我们要做的就是根据这个json文本把它转换成对应的实体类再返回去（当然，返回的类型是这些实体类的基类）。我们知道有这样的一个json文件，它对应某某一个实体类，<strong>可是编译器不知道</strong>。所以，在这个方法里，我直接使用了暴力枚举的方案来实现这个需求。也就是说，我们知道且确保这些json文件可以反序列化成一个共同的基类，但是我们不知道这个json对应哪一个具体的子类。所以，我们要根据基类的<code>Type</code>属性来判断哪个基类是最后要返回的。</p>
+<p>这样写的问题就在于，每次添加新的事件类都需要到这个冗长的switch语句里再添加一个分支，这一点也不面向对象！而且这样写太原始，太暴力，酷哥不应该这样做。</p>
+<h2 id="Elegant"><a href="#Elegant" class="headerlink" title="Elegant"></a>Elegant</h2><p>酷哥应该如何做？ 答案是：<strong>反射</strong>。</p>
+<p>首先，我们要确保我们的每个实体类都有一个能判断它是谁的要素，比如在它的名字里加上前缀或者后缀，或者给它一个有默认值的属性。在这里，我们的每个实体类都有一个<code>Type</code>属性，这是一个枚举，并且包含默认值，所以知道这个<code>Type</code>属性的值是什么，就知道这个实体类是谁了。所以我们使用<code>Activator.CreateInstance</code>来创建这个实体类的默认实例。现在我们有了一个集合，里面是我们所有实体类的默认实例。</p>
+<p>有了这个属性，我们再根据<code>JsonConvert.DeserializeObject</code>来创建一个基类的实例，<strong>这个基类实例的数据是丢失的</strong>，我们会用到这个基类实例的<code>Type</code>属性。</p>
+<p>接下来的事情就简单了，判断我们的实例集合里有没有和这个基类的类型相同的实体类，如果没有，就抛出异常，如果有，就进行下一步工作：<br>首先找出唯一的和这个基类的<code>Type</code>相同的实体类实例，然后再遍历储存实体类的Type(typeof)的集合，如果这个唯一的实力类实例和Type(typeof)的集合中的某个元素的Type(typeof)相等的话，就可以直接使用<code>JsonConvert.DeserializeObject(json, type)</code>这个重载方法获取到object然后再强转成基类对象就完事了。</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+    <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <p class="copyright text-muted">
+          Theme By <a target="_blank" href="https://github.com/levblanc">Levblanc.</a>
+          Inspired By <a target="_blank" href="https://github.com/klugjo/hexo-theme-clean-blog">Clean Blog.</a>
+        <p class="copyright text-muted">
+          Powered By <a target="_blank" href="https://hexo.io/">Hexo.</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <!-- After Footer Scripts -->
+
+<script src="/js/highlight.pack.js"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
+    codeBlocks.forEach(function(block, index) {
+      hljs.highlightBlock(block);
+    });
+  });
+</script>
+
+  </body>
+</html>
+

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+  <!-- Html Head Tag-->
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="AHpx">
+  <!-- Open Graph Data -->
+  <meta property="og:title" content="Permanently add environment variables on Fedora linux"/>
+  <meta property="og:description" content="Movie, Rock, Book, Coding, My life" />
+  <meta property="og:site_name" content="AHpx&#39;s Blog"/>
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://sinoahpx.github.io"/>
+  
+    <link rel="alternate" href="/atom.xml" title="AHpx&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+
+  <!-- Site Title -->
+  <title>AHpx's Blog</title>
+
+  <!-- Bootstrap CSS -->
+  
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+  <!-- Custom CSS -->
+  
+  
+<link rel="stylesheet" href="/css/style.light.css">
+
+
+  <!-- Google Analytics -->
+  
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+  <body>
+    <!-- Page Header -->
+
+
+<header class="site-header header-background" style="background-image: url(/img/last_sunsetting_2021.png)">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="page-title with-background-image">
+          <p class="title">Permanently add environment variables on Fedora linux</p>
+          <p class="subtitle"></p>
+        </div>
+        <div class="site-menu with-background-image">
+          <ul>
+            
+              <li>
+                <a href="/">
+                  
+                  Home
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  
+                  Archives
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/works">
+                  
+                  Works
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a target="_blank" rel="noopener" href="https://twitter.com/AHpxEx">
+                  
+                  Twitter
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a target="_blank" rel="noopener" href="https://github.com/SinoAHpx">
+                  
+                  Github
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="mailto:AHpx@yandex.com">
+                  
+                  Email
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/about">
+                  
+                  About
+                  
+                </a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<article>
+  <div class="container typo">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-info text-muted">
+          
+            <!-- Author -->
+            <span class="author info">By AHpx</span>
+          
+          <!-- Date -->
+          <span class="date-time info">On
+            <span class="date">2022-04-13</span>
+            <span class="time">00:28:21</span>
+          </span>
+          
+          <!--  Categories  -->
+            <span class="categories info">Under 
+
+<a href="/categories/system/">system</a>
+</span>
+          
+        </div>
+        <!-- Tags -->
+        
+          <div class="post-tags text-muted">
+            Tags: 
+
+<a class="tag" href="/tags/Linux/">#Linux</a> <a class="tag" href="/tags/Fedora/">#Fedora</a>
+
+
+          </div>
+        
+        <!-- Post Main Content -->
+        <div class="post-content">
+          <h1 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h1><p>I’m trying to be a Linux-cool guy recently, to be honest, Linux is too much tougher than Windows, but also being honest, Linux is much more interesting than Windows. You faced to problems, you googled it, and the problems are gone… just feel like fabricating a huge LEGO toy, feeling full of sense of accomplishment, it’s fascinating!</p>
+<p>In this post, I’ll introduce how to add environment variables on Fedora linux (other distros may be the same). </p>
+<h1 id="Go-for-it"><a href="#Go-for-it" class="headerlink" title="Go for it"></a>Go for it</h1><p>Firstly, you can check your current environment variables via <code>echo $PATH</code>, the result will be like:</p>
+<pre class="line-numbers language-none"><code class="language-none">bash: &#x2F;home&#x2F;ahpx&#x2F;.local&#x2F;bin:&#x2F;home&#x2F;ahpx&#x2F;bin:&#x2F;usr&#x2F;local&#x2F;bin:&#x2F;usr&#x2F;local&#x2F;sbin:&#x2F;usr&#x2F;bin:&#x2F;usr&#x2F;sbin:&#x2F;home&#x2F;ahpx&#x2F;.dotnet&#x2F;tools:&#x2F;home&#x2F;ahpx&#x2F;Softwares&#x2F;dart-sdk&#x2F;bin<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>Well, for a Linux noob like me, we don’t really care about using zsh or whatever else terminals, we simply use system-built-in one, the bash. So for now, you just open this file: <code>/etc/profile</code>.</p>
+<p>Use Visual Studio Code will be decent, just open the file in GUI and save it as root mode. If you don’t have it, just use <code>sudo nano /etc/profile</code>(or vim, whatever you want).</p>
+<p>Basically here is what you can see in <code>profile</code> file:</p>
+<pre class="line-numbers language-none"><code class="language-none"># &#x2F;etc&#x2F;profile
+
+# System wide environment and startup programs, for login setup
+# Functions and aliases go in &#x2F;etc&#x2F;bashrc
+
+# It&#39;s NOT a good idea to change this file unless you know what you
+# are doing. It&#39;s much better to create a custom.sh shell script in
+# &#x2F;etc&#x2F;profile.d&#x2F; to make custom changes to your environment, as this
+# will prevent the need for merging in future updates.
+
+pathmunge () &#123;
+    case &quot;:$&#123;PATH&#125;:&quot; in
+        *:&quot;$1&quot;:*)
+            ;;
+        *)
+            if [ &quot;$2&quot; &#x3D; &quot;after&quot; ] ; then
+                PATH&#x3D;$PATH:$1
+            else
+                PATH&#x3D;$1:$PATH
+            fi
+    esac
+&#125;
+
+
+if [ -x &#x2F;usr&#x2F;bin&#x2F;id ]; then
+    if [ -z &quot;$EUID&quot; ]; then
+        # ksh workaround
+        EUID&#x3D;&#96;&#x2F;usr&#x2F;bin&#x2F;id -u&#96;
+        UID&#x3D;&#96;&#x2F;usr&#x2F;bin&#x2F;id -ru&#96;
+    fi
+    USER&#x3D;&quot;&#96;&#x2F;usr&#x2F;bin&#x2F;id -un&#96;&quot;
+    LOGNAME&#x3D;$USER
+    MAIL&#x3D;&quot;&#x2F;var&#x2F;spool&#x2F;mail&#x2F;$USER&quot;
+fi
+
+# Path manipulation
+if [ &quot;$EUID&quot; &#x3D; &quot;0&quot; ]; then
+    pathmunge &#x2F;usr&#x2F;sbin
+    pathmunge &#x2F;usr&#x2F;local&#x2F;sbin
+else
+    pathmunge &#x2F;usr&#x2F;local&#x2F;sbin after
+    pathmunge &#x2F;usr&#x2F;sbin after
+fi
+
+HOSTNAME&#x3D;$(&#x2F;usr&#x2F;bin&#x2F;hostnamectl --transient 2&gt;&#x2F;dev&#x2F;null) || \
+HOSTNAME&#x3D;$(&#x2F;usr&#x2F;bin&#x2F;hostname 2&gt;&#x2F;dev&#x2F;null) || \
+HOSTNAME&#x3D;$(&#x2F;usr&#x2F;bin&#x2F;uname -n)
+
+HISTSIZE&#x3D;1000
+if [ &quot;$HISTCONTROL&quot; &#x3D; &quot;ignorespace&quot; ] ; then
+    export HISTCONTROL&#x3D;ignoreboth
+else
+    export HISTCONTROL&#x3D;ignoredups
+fi
+
+export PATH USER LOGNAME MAIL HOSTNAME HISTSIZE HISTCONTROL
+
+for i in &#x2F;etc&#x2F;profile.d&#x2F;*.sh &#x2F;etc&#x2F;profile.d&#x2F;sh.local ; do
+    if [ -r &quot;$i&quot; ]; then
+        if [ &quot;$&#123;-#*i&#125;&quot; !&#x3D; &quot;$-&quot; ]; then 
+            . &quot;$i&quot;
+        else
+            . &quot;$i&quot; &gt;&#x2F;dev&#x2F;null
+        fi
+    fi
+done
+
+unset i
+unset -f pathmunge
+
+# Source global bash config, when interactive but not posix or sh mode
+if test &quot;$BASH&quot; &amp;&amp;\
+   test -z &quot;$POSIXLY_CORRECT&quot; &amp;&amp;\
+   test &quot;$&#123;0#-&#125;&quot; !&#x3D; sh &amp;&amp;\
+   test -r &#x2F;etc&#x2F;bashrc
+then
+   # Bash login shells run only &#x2F;etc&#x2F;profile
+   # Bash non-login shells run only &#x2F;etc&#x2F;bashrc
+   # Check for double sourcing is done in &#x2F;etc&#x2F;bashrc.
+   . &#x2F;etc&#x2F;bashrc
+fi
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>Scroll it down to end line, now you can add your environment variables like this:</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token environment constant">$PATH</span><span class="token builtin class-name">:</span><span class="token string">"first"</span><span class="token builtin class-name">:</span><span class="token string">"second"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>Yeah, quite simple, right? But there’s one last thing you should keep in mind: <strong>DON’T MISS THE <code>$PATH:</code></strong>.</p>
+<h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://www.tecmint.com/set-path-variable-linux-permanently/">Learn How to Set Your $PATH Variables Permanently in Linux</a></li>
+</ul>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+    <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <p class="copyright text-muted">
+          Theme By <a target="_blank" href="https://github.com/levblanc">Levblanc.</a>
+          Inspired By <a target="_blank" href="https://github.com/klugjo/hexo-theme-clean-blog">Clean Blog.</a>
+        <p class="copyright text-muted">
+          Powered By <a target="_blank" href="https://hexo.io/">Hexo.</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <!-- After Footer Scripts -->
+
+<script src="/js/highlight.pack.js"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
+    codeBlocks.forEach(function(block, index) {
+      hljs.highlightBlock(block);
+    });
+  });
+</script>
+
+  </body>
+</html>
+
