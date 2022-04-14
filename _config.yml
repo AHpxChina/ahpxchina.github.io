@@ -6,14 +6,14 @@
 title: AHpx's Blog
 subtitle: 'Private land'
 description: 'Movie, Rock, Book, Coding, My life'
-keywords:
+keywords: ['coding', 'sharing']
 author: AHpx
 language: en
 timezone: ''
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: https://sinoahpx.github.io
+url: https://blog.ahpxchina.cn
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
