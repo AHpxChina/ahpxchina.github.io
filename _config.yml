@@ -103,5 +103,5 @@ theme: aero-dual
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repository: https://github.com/SinoAHpx/sinoahpx.github.io
+  repository: git@github.com:SinoAHpx/Mirai.Net.git
   branch: master
