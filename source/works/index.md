@@ -3,7 +3,7 @@ title: Works
 date: 2021-04-02 23:39:23
 ---
 
-### [ModuleLauncher.Re](https://github.com/AHpxChina/ModuleLauncher.Re)
+### [ModuleLauncher.Re](https://github.com/SinoAHpx/ModuleLauncher.Re)
 
 > Cross-platform Minecraft Launcher library
 >
@@ -13,13 +13,12 @@ date: 2021-04-02 23:39:23
 
 > Mirai.Net是基于mirai-api-http实现的轻量级mirai社区sdk。
 >
-> [AGPL-3.0 License](https://github.com/SinoAHpx/Mirai.Net/blob/2.1/LICENSE)
+> [AGPL-3.0 License](https://github.com/SinoAHpx/Mirai.Net/blob/2.4/LICENSE)
 
-### [Fleury](https://github.com/SinoAHpx/Fleury)
+### [dirai](https://github.com/SinoAHpx/dirai)
+> dirai是一个mirai-api-http的社区sdk
+>
+> AGPL-3.0 Licensed
 
-> Fleury is an extension library for remedying drawbacks in C# standard API
-
-### [YAML](https://github.com/SinoAHpx/YAML)
-
-> Yet Another Minecraft Launcher
-
+### [Manganese](https://github.com/SinoAHpx/Manganese/blob/master/LICENSE)
+> A handy extensions library.
