@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+  <!-- Html Head Tag-->
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="AHpx">
+  <!-- Open Graph Data -->
+  <meta property="og:title" content="How to fix the problem that process.Exited handler will not execute"/>
+  <meta property="og:description" content="Movie, Rock, Book, Coding, My life" />
+  <meta property="og:site_name" content="AHpx&#39;s Blog"/>
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://sinoahpx.github.io"/>
+  
+    <link rel="alternate" href="/atom.xml" title="AHpx&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+
+  <!-- Site Title -->
+  <title>AHpx's Blog</title>
+
+  <!-- Bootstrap CSS -->
+  
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+  <!-- Custom CSS -->
+  
+  
+<link rel="stylesheet" href="/css/style.light.css">
+
+
+  <!-- Google Analytics -->
+  
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+  <body>
+    <!-- Page Header -->
+
+
+<header class="site-header header-background" style="background-image: url(/img/last_sunsetting_2021.png)">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="page-title with-background-image">
+          <p class="title">How to fix the problem that process.Exited handler will not execute</p>
+          <p class="subtitle"></p>
+        </div>
+        <div class="site-menu with-background-image">
+          <ul>
+            
+              <li>
+                <a href="/">
+                  
+                  Home
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  
+                  Archives
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/works">
+                  
+                  Works
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a target="_blank" rel="noopener" href="https://twitter.com/AHpxEx">
+                  
+                  Twitter
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a target="_blank" rel="noopener" href="https://github.com/SinoAHpx">
+                  
+                  Github
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="mailto:AHpx@yandex.com">
+                  
+                  Email
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/about">
+                  
+                  About
+                  
+                </a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<article>
+  <div class="container typo">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-info text-muted">
+          
+            <!-- Author -->
+            <span class="author info">By AHpx</span>
+          
+          <!-- Date -->
+          <span class="date-time info">On
+            <span class="date">2021-08-27</span>
+            <span class="time">12:57:54</span>
+          </span>
+          
+          <!--  Categories  -->
+            <span class="categories info">Under 
+
+<a href="/categories/dev/">dev</a>
+</span>
+          
+        </div>
+        <!-- Tags -->
+        
+          <div class="post-tags text-muted">
+            Tags: 
+
+<a class="tag" href="/tags/CSharp/">#CSharp</a>
+
+
+          </div>
+        
+        <!-- Post Main Content -->
+        <div class="post-content">
+          <p>As the code below:</p>
+<pre class="line-numbers language-cs" data-language="cs"><code class="language-cs">var path &#x3D; @&quot;xxx.exe&quot;;
+
+var process &#x3D; new Process
+&#123;
+    StartInfo &#x3D; new ProcessStartInfo
+    &#123;
+        FileName &#x3D; path
+    &#125;
+&#125;;
+
+process.Start();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>If there’s a scenario that we need to detect if this process exited and execute handler, how would you like to implement it?</p>
+<p>Let’s add a event handler for <code>process.Exited</code> event:</p>
+<pre class="line-numbers language-cs" data-language="cs"><code class="language-cs">process.Exited +&#x3D; (_, _) &#x3D;&gt;
+&#123;
+    Console.WriteLine($&quot;&#96;Process exit with code &#123;process.ExitCode&#125;&#96;&quot;);
+;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>Run our application, and the question is: the code above didn’t work properly, when the process that we started to exit, the <code>process.Exited</code> event handler didn’t execute.</p>
+<p>So you will check the <a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.process.exited?view=net-5.0">Document</a>, they say: <code>It raises the Exited event when the process exits because the EnableRaisingEvents property was set when the process was created. The Exited event handler displays process information.</code> So what if we set EnableRaisingEvents to <em>true</em>?</p>
+<pre class="line-numbers language-cs" data-language="cs"><code class="language-cs">var process &#x3D; new Process
+&#123;
+    StartInfo &#x3D; new ProcessStartInfo
+    &#123;
+        FileName &#x3D; path
+    &#125;,
+    EnableRaisingEvents &#x3D; true
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>In the code above, we’ve set EnableRaisingEvents to <em>true</em>, but if we run the application again, the <code>process.Exited</code> event handler didn’t execute either, what we gonna do now?</p>
+<p>If you care enough, you will find that when the executable file that we specified started success, our application end tho. On purpose to make our application won’t exit until the executable exited, we need to append the code below after the executable file started:</p>
+<pre class="line-numbers language-cs" data-language="cs"><code class="language-cs">process.WaitForExit()<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>We just run the application again, the console output <code>Process exit with code &#123;process.ExitCode&#125;</code> is displayed successfully now.</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+    <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <p class="copyright text-muted">
+          Theme By <a target="_blank" href="https://github.com/levblanc">Levblanc.</a>
+          Inspired By <a target="_blank" href="https://github.com/klugjo/hexo-theme-clean-blog">Clean Blog.</a>
+        <p class="copyright text-muted">
+          Powered By <a target="_blank" href="https://hexo.io/">Hexo.</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <!-- After Footer Scripts -->
+
+<script src="/js/highlight.pack.js"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
+    codeBlocks.forEach(function(block, index) {
+      hljs.highlightBlock(block);
+    });
+  });
+</script>
+
+  </body>
+</html>
+

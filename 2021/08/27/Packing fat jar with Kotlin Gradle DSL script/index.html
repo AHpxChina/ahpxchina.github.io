@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+  <!-- Html Head Tag-->
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="AHpx">
+  <!-- Open Graph Data -->
+  <meta property="og:title" content="Packing fat jar with Kotlin Gradle DSL script"/>
+  <meta property="og:description" content="Movie, Rock, Book, Coding, My life" />
+  <meta property="og:site_name" content="AHpx&#39;s Blog"/>
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://sinoahpx.github.io"/>
+  
+    <link rel="alternate" href="/atom.xml" title="AHpx&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+
+  <!-- Site Title -->
+  <title>AHpx's Blog</title>
+
+  <!-- Bootstrap CSS -->
+  
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+  <!-- Custom CSS -->
+  
+  
+<link rel="stylesheet" href="/css/style.light.css">
+
+
+  <!-- Google Analytics -->
+  
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+  <body>
+    <!-- Page Header -->
+
+
+<header class="site-header header-background" style="background-image: url(/img/last_sunsetting_2021.png)">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="page-title with-background-image">
+          <p class="title">Packing fat jar with Kotlin Gradle DSL script</p>
+          <p class="subtitle"></p>
+        </div>
+        <div class="site-menu with-background-image">
+          <ul>
+            
+              <li>
+                <a href="/">
+                  
+                  Home
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  
+                  Archives
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/works">
+                  
+                  Works
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a target="_blank" rel="noopener" href="https://twitter.com/AHpxEx">
+                  
+                  Twitter
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a target="_blank" rel="noopener" href="https://github.com/SinoAHpx">
+                  
+                  Github
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="mailto:AHpx@yandex.com">
+                  
+                  Email
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/about">
+                  
+                  About
+                  
+                </a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<article>
+  <div class="container typo">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-info text-muted">
+          
+            <!-- Author -->
+            <span class="author info">By AHpx</span>
+          
+          <!-- Date -->
+          <span class="date-time info">On
+            <span class="date">2021-08-27</span>
+            <span class="time">12:57:54</span>
+          </span>
+          
+        </div>
+        <!-- Tags -->
+        
+          <div class="post-tags text-muted">
+            Tags: 
+
+<a class="tag" href="/tags/Kotlin/">#Kotlin</a>
+
+
+          </div>
+        
+        <!-- Post Main Content -->
+        <div class="post-content">
+          <p>First, let’s get started by creating a new kotlin(java the same) project. Just select the Gradle template tab and check <code>Kotlin DSL build script</code>. By the way, if you just want a very simple try, just choose whatever you want <code>Additional Libraries and Frameworks</code>, and just keep the default package configuration.</p>
+<p><img src="https://i.loli.net/2021/07/24/lDbrqL2ySa8W6TH.png"></p>
+<p>As you can see, our project has been successfully initiated by the default way. And a simple <code>HelloWorld</code> kotlin file has been created.<br><img src="https://i.loli.net/2021/07/24/EgX9QYDayfZbCdt.png"></p>
+<p>It’s time to release our HelloWorld project to people!</p>
+<p>All our work based on the plugin <a target="_blank" rel="noopener" href="https://github.com/johnrengelman/shadow">shadow</a>, so let’s install it:</p>
+<pre class="line-numbers language-kotlin" data-language="kotlin"><code class="language-kotlin">plugins <span class="token punctuation">&#123;</span>
+    <span class="token function">kotlin</span><span class="token punctuation">(</span><span class="token string">"jvm"</span><span class="token punctuation">)</span> version <span class="token string">"1.5.21"</span>
+    <span class="token function">id</span><span class="token punctuation">(</span><span class="token string">"com.github.johnrengelman.shadow"</span><span class="token punctuation">)</span> version <span class="token string">"7.0.0"</span> <span class="token comment">//you can modify the version here to the latest</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>The last configuration item is, append there’s code to the end of the script file:</p>
+<pre class="line-numbers language-kotlin" data-language="kotlin"><code class="language-kotlin">tasks<span class="token punctuation">.</span>withType<span class="token operator">&lt;</span>com<span class="token punctuation">.</span>github<span class="token punctuation">.</span>jengelman<span class="token punctuation">.</span>gradle<span class="token punctuation">.</span>plugins<span class="token punctuation">.</span>shadow<span class="token punctuation">.</span>tasks<span class="token punctuation">.</span>ShadowJar<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    manifest <span class="token punctuation">&#123;</span>
+        attributes<span class="token punctuation">[</span><span class="token string">"Main-Class"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"LauncherKt"</span> <span class="token comment">//you must modify here to your own main class</span>
+                                                <span class="token comment">//note: if you are using kotlin like me, don't forget to </span>
+                                                <span class="token comment">//append "Kt" as a suffix of the class name</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>This is the final result of the jobs above, now we can start making our fat jar.</p>
+<p><img src="https://i.loli.net/2021/07/24/o9gqh3QyYe8BsRw.png"></p>
+<p>Check out the sidebar right side, you will found that there’s a <code>shadow</code> section in the Gradle task list, right-click the section of <code>shadowJar</code>, and just waiting for the process to run out.</p>
+<p><img src="https://i.loli.net/2021/07/24/ma4rFSMV6PAYEt8.png"></p>
+<p>It’s time to gain our reward, turn into <code>&lt;your project directory&gt;/build/lib</code>, have a look at the jar with <code>-all</code> suffix—that’s what we exactly need to.</p>
+<p><img src="https://i.loli.net/2021/07/24/sLYrpFQ3WG2KZi5.png"><br>Now you can execute this artifact via java runtime:</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">java -jar F:\Demos\untitled\build\libs\untitled-1.0-SNAPSHOT-all.jar &lt;arguments, splitting with spaces&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="https://i.loli.net/2021/07/24/AqEInmfUug4PLsk.png"></p>
+<p>Have fun, and enjoy!</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+    <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <p class="copyright text-muted">
+          Theme By <a target="_blank" href="https://github.com/levblanc">Levblanc.</a>
+          Inspired By <a target="_blank" href="https://github.com/klugjo/hexo-theme-clean-blog">Clean Blog.</a>
+        <p class="copyright text-muted">
+          Powered By <a target="_blank" href="https://hexo.io/">Hexo.</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <!-- After Footer Scripts -->
+
+<script src="/js/highlight.pack.js"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
+    codeBlocks.forEach(function(block, index) {
+      hljs.highlightBlock(block);
+    });
+  });
+</script>
+
+  </body>
+</html>
+
