@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+  <!-- Html Head Tag-->
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="AHpx">
+  <!-- Open Graph Data -->
+  <meta property="og:title" content="Solving: There should be exactly one item with [DropdownButtonFormField]&#39;s value"/>
+  <meta property="og:description" content="Movie, Rock, Book, Coding, My life" />
+  <meta property="og:site_name" content="AHpx&#39;s Blog"/>
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://blog.ahpxchina.cn"/>
+  
+    <link rel="alternate" href="/atom.xml" title="AHpx&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+
+  <!-- Site Title -->
+  <title>AHpx's Blog</title>
+
+  <!-- Bootstrap CSS -->
+  
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+  <!-- Custom CSS -->
+  
+  
+<link rel="stylesheet" href="/css/style.light.css">
+
+
+  <!-- Google Analytics -->
+  
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+  <body>
+    <!-- Page Header -->
+
+
+<header class="site-header header-background" style="background-image: url(/img/last_sunsetting_2021.png)">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="page-title with-background-image">
+          <p class="title">Solving: There should be exactly one item with [DropdownButtonFormField]&#39;s value</p>
+          <p class="subtitle"></p>
+        </div>
+        <div class="site-menu with-background-image">
+          <ul>
+            
+              <li>
+                <a href="/">
+                  
+                  Home
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  
+                  Archives
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/works">
+                  
+                  Works
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a target="_blank" rel="noopener" href="https://twitter.com/AHpxEx">
+                  
+                  Twitter
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a target="_blank" rel="noopener" href="https://github.com/SinoAHpx">
+                  
+                  Github
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="mailto:AHpx@yandex.com">
+                  
+                  Email
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/about">
+                  
+                  About
+                  
+                </a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<article>
+  <div class="container typo">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-info text-muted">
+          
+            <!-- Author -->
+            <span class="author info">By AHpx</span>
+          
+          <!-- Date -->
+          <span class="date-time info">On
+            <span class="date">2022-06-06</span>
+            <span class="time">16:40:47</span>
+          </span>
+          
+          <!--  Categories  -->
+            <span class="categories info">Under 
+
+<a href="/categories/dev/">dev</a>
+</span>
+          
+        </div>
+        <!-- Tags -->
+        
+          <div class="post-tags text-muted">
+            Tags: 
+
+<a class="tag" href="/tags/flutter/">#flutter</a> <a class="tag" href="/tags/dart/">#dart</a> <a class="tag" href="/tags/ui/">#ui</a>
+
+
+          </div>
+        
+        <!-- Post Main Content -->
+        <div class="post-content">
+          <h2 id="Scenario"><a href="#Scenario" class="headerlink" title="Scenario"></a>Scenario</h2><p>Coding a app with a two <code>DropdownButtonFormField</code>, which choose certain value from the first one, and represent specified items in the second one. Some of these value won’t be the same, this is how’s the problem come from.</p>
+<h2 id="Demonstration"><a href="#Demonstration" class="headerlink" title="Demonstration"></a>Demonstration</h2><p>Here is an abstract model of my actual code:</p>
+<pre class="line-numbers language-dart" data-language="dart"><code class="language-dart"><span class="token keyword">class</span> <span class="token class-name">DemoState</span> <span class="token keyword">extends</span> <span class="token class-name">State</span><span class="token operator">&lt;</span>Demo<span class="token operator">></span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">var</span> asia <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"Singapore"</span><span class="token punctuation">,</span> <span class="token string">"Korea"</span><span class="token punctuation">,</span> <span class="token string">"China"</span><span class="token punctuation">,</span> <span class="token string">"Japan"</span><span class="token punctuation">,</span> <span class="token string">"India"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token keyword">var</span> europe <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"UK"</span><span class="token punctuation">,</span> <span class="token string">"Franch"</span><span class="token punctuation">,</span> <span class="token string">"German"</span><span class="token punctuation">,</span> <span class="token string">"Russia"</span><span class="token punctuation">,</span> <span class="token string">"Minecraft"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+  String<span class="token operator">?</span> selectedContry<span class="token punctuation">;</span>
+  bool isChina <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+
+  <span class="token metadata symbol">@override</span>
+  Widget <span class="token function">build</span><span class="token punctuation">(</span>BuildContext context<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">return</span> <span class="token function">Scaffold</span><span class="token punctuation">(</span>
+      body<span class="token punctuation">:</span> <span class="token function">Center</span><span class="token punctuation">(</span>
+        child<span class="token punctuation">:</span> <span class="token function">Column</span><span class="token punctuation">(</span>
+          mainAxisAlignment<span class="token punctuation">:</span> MainAxisAlignment<span class="token punctuation">.</span>center<span class="token punctuation">,</span>
+          children<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+            <span class="token function">DropdownButton</span><span class="token punctuation">(</span>
+              <span class="token comment">//notice this</span>
+              value<span class="token punctuation">:</span> selectedContry<span class="token punctuation">,</span>
+              items<span class="token punctuation">:</span> <span class="token punctuation">(</span>isChina <span class="token operator">?</span> asia <span class="token punctuation">:</span> europe<span class="token punctuation">)</span>
+                  <span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token function">DropdownMenuItem</span><span class="token punctuation">(</span>
+                        child<span class="token punctuation">:</span> <span class="token function">Text</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">,</span>
+                        value<span class="token punctuation">:</span> e<span class="token punctuation">,</span>
+                      <span class="token punctuation">)</span><span class="token punctuation">)</span>
+                  <span class="token punctuation">.</span><span class="token function">toList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+              onChanged<span class="token punctuation">:</span> <span class="token punctuation">(</span>String<span class="token operator">?</span> value<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                <span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                  selectedContry <span class="token operator">=</span> value<span class="token punctuation">;</span>
+                  <span class="token keyword">if</span> <span class="token punctuation">(</span>value <span class="token operator">==</span> <span class="token string">"China"</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                    isChina <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+                  <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+                    isChina <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+                  <span class="token punctuation">&#125;</span>
+                <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+              <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+            <span class="token punctuation">)</span><span class="token punctuation">,</span>
+          <span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>If you trying to run it, there’s an exception thrown like this:</p>
+<pre class="line-numbers language-none"><code class="language-none">Exception has occurred.
+_AssertionError (&#39;package:flutter&#x2F;src&#x2F;material&#x2F;dropdown.dart&#39;: Failed assertion: line 882 pos 15: &#39;items &#x3D;&#x3D; null || items.isEmpty || value &#x3D;&#x3D; null ||
+              items.where((DropdownMenuItem&lt;T&gt; item) &#123;
+                return item.value &#x3D;&#x3D; value;
+              &#125;).length &#x3D;&#x3D; 1&#39;: There should be exactly one item with [DropdownButton]&#39;s value: Japan. 
+Either zero or 2 or more [DropdownMenuItem]s were detected with the same value)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="Analysis"><a href="#Analysis" class="headerlink" title="Analysis"></a>Analysis</h2><p>In this case, what is we expected is that when user click the item <code>China</code>, the dropdown won’t change otherwise the dropdown will be populated with other list: <code>europe</code>. Actually, when you choose <code>China</code>, nothing goes wrong, but for other country, the exception will be thrown.</p>
+<p>Let’s put it simple: this error is thrown because the code above trying to give a value that don’t exist in the list <code>europe</code>. which is illegal in flutter.</p>
+<p>What should you do is simply populating the value that also exist in the new list.</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>Just check if old value also exists in the new items, if false, just insert an surely-exist value, otherwise use the old value.</p>
+<pre class="line-numbers language-dart" data-language="dart"><code class="language-dart">onChanged<span class="token punctuation">:</span> <span class="token punctuation">(</span>String<span class="token operator">?</span> value<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>value <span class="token operator">==</span> <span class="token string">"China"</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      isChina <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+      selectedContry <span class="token operator">=</span> value<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+      isChina <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>europe<span class="token punctuation">.</span><span class="token function">contains</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        selectedContry <span class="token operator">=</span> value<span class="token punctuation">;</span>
+      <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+        selectedContry <span class="token operator">=</span> europe<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+      <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">,</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+    <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <p class="copyright text-muted">
+          Theme By <a target="_blank" href="https://github.com/levblanc">Levblanc.</a>
+          Inspired By <a target="_blank" href="https://github.com/klugjo/hexo-theme-clean-blog">Clean Blog.</a>
+        <p class="copyright text-muted">
+          Powered By <a target="_blank" href="https://hexo.io/">Hexo.</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <!-- After Footer Scripts -->
+
+<script src="/js/highlight.pack.js"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
+    codeBlocks.forEach(function(block, index) {
+      hljs.highlightBlock(block);
+    });
+  });
+</script>
+
+  </body>
+</html>
+
