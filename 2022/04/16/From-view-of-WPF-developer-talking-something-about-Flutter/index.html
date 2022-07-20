@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+  <!-- Html Head Tag-->
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="AHpx">
+  <!-- Open Graph Data -->
+  <meta property="og:title" content="From view of WPF developer - talking something about Flutter (1)"/>
+  <meta property="og:description" content="Movie, Rock, Book, Coding, My life" />
+  <meta property="og:site_name" content="AHpx&#39;s Blog"/>
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://blog.ahpxchina.cn"/>
+  
+    <link rel="alternate" href="/atom.xml" title="AHpx&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+
+  <!-- Site Title -->
+  <title>AHpx's Blog</title>
+
+  <!-- Bootstrap CSS -->
+  
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+  <!-- Custom CSS -->
+  
+  
+<link rel="stylesheet" href="/css/style.light.css">
+
+
+  <!-- Google Analytics -->
+  
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+  <body>
+    <!-- Page Header -->
+
+
+<header class="site-header header-background" style="background-image: url(/img/last_sunsetting_2021.png)">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="page-title with-background-image">
+          <p class="title">From view of WPF developer - talking something about Flutter (1)</p>
+          <p class="subtitle"></p>
+        </div>
+        <div class="site-menu with-background-image">
+          <ul>
+            
+              <li>
+                <a href="/">
+                  
+                  Home
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  
+                  Archives
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/works">
+                  
+                  Works
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a target="_blank" rel="noopener" href="https://twitter.com/AHpxEx">
+                  
+                  Twitter
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a target="_blank" rel="noopener" href="https://github.com/SinoAHpx">
+                  
+                  Github
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="mailto:AHpx@yandex.com">
+                  
+                  Email
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/about">
+                  
+                  About
+                  
+                </a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<article>
+  <div class="container typo">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-info text-muted">
+          
+            <!-- Author -->
+            <span class="author info">By AHpx</span>
+          
+          <!-- Date -->
+          <span class="date-time info">On
+            <span class="date">2022-04-16</span>
+            <span class="time">16:49:21</span>
+          </span>
+          
+          <!--  Categories  -->
+            <span class="categories info">Under 
+
+<a href="/categories/dev/">dev</a>
+</span>
+          
+        </div>
+        <!-- Tags -->
+        
+          <div class="post-tags text-muted">
+            Tags: 
+
+<a class="tag" href="/tags/CSharp/">#CSharp</a> <a class="tag" href="/tags/WPF/">#WPF</a> <a class="tag" href="/tags/UI/">#UI</a> <a class="tag" href="/tags/Flutter/">#Flutter</a>
+
+
+          </div>
+        
+        <!-- Post Main Content -->
+        <div class="post-content">
+          <h1 id="Prologue"><a href="#Prologue" class="headerlink" title="Prologue"></a>Prologue</h1><p>Recently I have read Dart documentation and have a glance at the Flutter framework, which is a cross-platform UI framework, Windows, macOS, Linux, Android, iOS, even the web. Wow, That was fascinating!</p>
+<p>So that’s why this (series of) post(s) coming up, I’d like to share my acquasition of Flutter, and combine it with my previous experience of developing WPF applications.</p>
+<p>Well, as this post will definitely not be shown in Google results or somewhat else, I don’t really care about its quality, I don’t mind if it’s informative enough, or well-clarified, just write as I like, write in my way.</p>
+<p>As you can see, here is a piece of Flutter’s build UI code, which is in the same position as <code>.xaml</code> in WPF do, but this code is pure Dart, you don’t have to learn another markup language to use it. The significant feature in Dart - <a target="_blank" rel="noopener" href="https://dart.dev/guides/language/language-tour#parameters">Named parameters</a>, is the who support you to express UI elements that easy.</p>
+<pre class="line-numbers language-dart" data-language="dart"><code class="language-dart"><span class="token metadata symbol">@override</span>
+Widget <span class="token function">build</span><span class="token punctuation">(</span>BuildContext context<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">return</span> <span class="token function">Scaffold</span><span class="token punctuation">(</span>
+    body<span class="token punctuation">:</span> <span class="token function">Center</span><span class="token punctuation">(</span>
+      child<span class="token punctuation">:</span> <span class="token function">Column</span><span class="token punctuation">(</span>
+        mainAxisAlignment<span class="token punctuation">:</span> MainAxisAlignment<span class="token punctuation">.</span>c
+        children<span class="token punctuation">:</span> <span class="token operator">&lt;</span>Widget<span class="token operator">></span><span class="token punctuation">[</span>
+          <span class="token keyword">const</span> <span class="token function">Text</span><span class="token punctuation">(</span>
+            <span class="token string">'The counter still:'</span><span class="token punctuation">,</span>
+          <span class="token punctuation">)</span><span class="token punctuation">,</span>
+          <span class="token function">TextFormField</span><span class="token punctuation">(</span>
+            controller<span class="token punctuation">:</span> _controller<span class="token punctuation">,</span>
+          <span class="token punctuation">)</span><span class="token punctuation">,</span>
+          <span class="token function">OutlinedButton</span><span class="token punctuation">(</span>
+            onPressed<span class="token punctuation">:</span> _resetCounter<span class="token punctuation">,</span>
+            child<span class="token punctuation">:</span> <span class="token keyword">const</span> <span class="token function">Text</span><span class="token punctuation">(</span><span class="token string">"Reset"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+          <span class="token punctuation">)</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">,</span>
+    floatingActionButton<span class="token punctuation">:</span> FloatingActionButton
+      onPressed<span class="token punctuation">:</span> _decrementCounter<span class="token punctuation">,</span>
+      tooltip<span class="token punctuation">:</span> <span class="token string">'Decrement'</span><span class="token punctuation">,</span>
+      child<span class="token punctuation">:</span> <span class="token keyword">const</span> <span class="token function">Icon</span><span class="token punctuation">(</span>Icons<span class="token punctuation">.</span>remove<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h1 id="Widget"><a href="#Widget" class="headerlink" title="Widget"></a>Widget</h1><p>In the flutter, everything is a widget, and there’s <code>StatelessWidget</code> and <code>StatefulWidget</code>. For an example, <code>StatelessWidge</code> is essentially equivalent to <code>App</code> in the WPF, and <code>StatefulWidget</code> is equivalent to another control component in WPF.</p>
+<p>So, what is the <code>State</code> in Flutter? Well, that was a complex concept, and this is a blog post but a paper. To be straightforward, the <code>State</code> is basically like the <code>ViewModel</code> in a MVVM patterned WPF application, so the <code>StatefulWidget</code>, suppose to be the <code>View</code>. You do actions in the <code>StatefulWidget</code>, and the actions will be passed to the <code>State</code> to be processed, then, your <code>State</code> will invoke the top-level function <code>setState</code> to notify the widget: data has changed, please refresh. In code, it’s simply an invokation to the <code>build</code> function in the <code>StatefulWidget</code>.</p>
+<p><img src="https://i.stack.imgur.com/z6NU2.png" alt="picture 1">  </p>
+<h1 id="Scaffold"><a href="#Scaffold" class="headerlink" title="Scaffold"></a>Scaffold</h1><p>Quite simple and clear, the <code>Scaffold</code> is the main widget in the Flutter, it’s a container that contains the <code>AppBar</code>, <code>Body</code>, etc. For a not really suitable metaphor, just like the <code>UserControl</code> in the WPF.</p>
+<h1 id="Columns"><a href="#Columns" class="headerlink" title="Columns"></a>Columns</h1><p>Not liking the WPF, the <code>Columns</code> in Flutter is a separated element, there’s no such thing as <code>Grid</code> in WPF, just <code>Column</code> and <code>Row</code>, when representing the vertical and horizontal layout, both of them can contains multiple children.</p>
+<h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://docs.flutter.dev/development/ui/layout/tutorial">https://docs.flutter.dev/development/ui/layout/tutorial</a></li>
+<li><a target="_blank" rel="noopener" href="https://stackoverflow.com/a/68895591/12167919">https://stackoverflow.com/a/68895591/12167919</a></li>
+</ul>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+    <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <p class="copyright text-muted">
+          Theme By <a target="_blank" href="https://github.com/levblanc">Levblanc.</a>
+          Inspired By <a target="_blank" href="https://github.com/klugjo/hexo-theme-clean-blog">Clean Blog.</a>
+        <p class="copyright text-muted">
+          Powered By <a target="_blank" href="https://hexo.io/">Hexo.</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <!-- After Footer Scripts -->
+
+<script src="/js/highlight.pack.js"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
+    codeBlocks.forEach(function(block, index) {
+      hljs.highlightBlock(block);
+    });
+  });
+</script>
+
+  </body>
+</html>
+
