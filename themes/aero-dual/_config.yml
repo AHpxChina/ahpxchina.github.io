@@ -25,7 +25,7 @@ use_header_cover: true
 # or
 # Specify an online resource like so:
 # index_cover: http://somewhere.com/path/to/banner.jpg
-index_cover: /img/last_sunsetting_2021.png
+index_cover: https://s2.loli.net/2022/07/21/zAudvYZ1XIKblFS.png
 
 widgets:
 - category
@@ -40,5 +40,4 @@ show_count: true
 favicon: /favicon.png
 
 # Google Analytics Tracking ID
-google_analytics:
-
+google_analytics: G-89D6458WE7
