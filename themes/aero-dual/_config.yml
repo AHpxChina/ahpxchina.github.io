@@ -3,10 +3,8 @@ menu:
   Home: /
   Archives: /archives
   Works: /works
-  Twitter: https://twitter.com/AHpxEx
-  Github: https://github.com/SinoAHpx
-  Email: mailto:AHpx@yandex.com
   About: /about
+  Links: /links
 rss: /atom.xml
 
 # Set to false to disable banner
@@ -25,7 +23,7 @@ use_header_cover: true
 # or
 # Specify an online resource like so:
 # index_cover: http://somewhere.com/path/to/banner.jpg
-index_cover: https://s2.loli.net/2022/07/21/zAudvYZ1XIKblFS.png
+index_cover: /img/last_sunsetting_2021.png
 
 widgets:
 - category

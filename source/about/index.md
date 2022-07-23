@@ -10,14 +10,20 @@ date: 2021-04-02 23:42:50
 + 基本没有通过写代码赚过一毛钱
 + 热爱折腾，主要使用Windows/Android/Linux
 
-### 友链
+### 联系
 
-> Yoroion
-> https://yoroion.github.io/
++ [Email](mailto:AHpx@yandex.com)
++ [Twitter](https://twitter.com/AHpxEx)
++ [GitHub](https://github.com/SinoAHpx)
++ [Telegram](https://t.me/AHpxEx)
 
-欢迎交换友链。
+### 为什么有英文内容
 
-### 这里的前世今生
++ ~~我喜欢装逼。~~
++ 整体来说我的英文水平不高，需要更多的联系和提升。
++ 在一些技术性的东西使用英文来表述更加有利于和别人接轨。
+
+### 这个博客的前世今生
 
 我曾多次搭建过博客这类的网站，差不多是2019年4月我就成功搭好了我的第一个博客，用的是vultr的vps，使用typecho，还有一个叫做"ahpxarctic.cn"的域名。这个博客存活时间很短，而且也没有几篇有意义的内容，所以当时的那个vps就直接被我销毁了。后来又是同样配置的博客，虽然也是同样的夭折，但是买了"ahpxchina.cn"这个域名3年。
 
