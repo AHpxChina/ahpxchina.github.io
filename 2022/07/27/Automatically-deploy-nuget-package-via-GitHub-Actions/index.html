@@ -17,7 +17,7 @@
     <link rel="alternate" href="/atom.xml" title="AHpx&#39;s Blog" type="application/atom+xml">
   
   
-    <link rel="icon" href="/favicon.png">
+    <link rel="icon" href="/img/AIcon.png">
   
 
   <!-- Site Title -->
@@ -122,7 +122,7 @@
           <!-- Date -->
           <span class="date-time info">On
             <span class="date">2022-07-27</span>
-            <span class="time">21:14:50</span>
+            <span class="time">21:25:55</span>
           </span>
           
           <!--  Categories  -->
@@ -162,65 +162,65 @@
 <h3 id="Create-an-Action-workflow"><a href="#Create-an-Action-workflow" class="headerlink" title="Create an Action workflow"></a>Create an Action workflow</h3><p>Simply create the suggested workflows for .NET, or you can create your own, that doesn’t matter.</p>
 <p><img src="https://s2.loli.net/2022/07/27/7tYGZ8JdLHhjCSX.png" alt="png 1">  </p>
 <p>The initial content of .NET workflow template will look like:</p>
-<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token key atrule">name</span><span class="token punctuation">:</span> .NET
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">name: .NET
 
-<span class="token key atrule">on</span><span class="token punctuation">:</span>
-  <span class="token key atrule">push</span><span class="token punctuation">:</span>
-    <span class="token key atrule">branches</span><span class="token punctuation">:</span> <span class="token punctuation">[</span> <span class="token string">"master"</span> <span class="token punctuation">]</span>
-  <span class="token key atrule">pull_request</span><span class="token punctuation">:</span>
-    <span class="token key atrule">branches</span><span class="token punctuation">:</span> <span class="token punctuation">[</span> <span class="token string">"master"</span> <span class="token punctuation">]</span>
+on:
+  push:
+    branches: [ &quot;master&quot; ]
+  pull_request:
+    branches: [ &quot;master&quot; ]
 
-<span class="token key atrule">jobs</span><span class="token punctuation">:</span>
-  <span class="token key atrule">build</span><span class="token punctuation">:</span>
+jobs:
+  build:
 
-    <span class="token key atrule">runs-on</span><span class="token punctuation">:</span> ubuntu<span class="token punctuation">-</span>latest
+    runs-on: ubuntu-latest
 
-    <span class="token key atrule">steps</span><span class="token punctuation">:</span>
-    <span class="token punctuation">-</span> <span class="token key atrule">uses</span><span class="token punctuation">:</span> actions/checkout@v3
-    <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Setup .NET
-      <span class="token key atrule">uses</span><span class="token punctuation">:</span> actions/setup<span class="token punctuation">-</span>dotnet@v2
-      <span class="token key atrule">with</span><span class="token punctuation">:</span>
-        <span class="token key atrule">dotnet-version</span><span class="token punctuation">:</span> 6.0.x
-    <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Restore dependencies
-      <span class="token key atrule">run</span><span class="token punctuation">:</span> dotnet restore
-    <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Build
-      <span class="token key atrule">run</span><span class="token punctuation">:</span> dotnet build <span class="token punctuation">-</span><span class="token punctuation">-</span>no<span class="token punctuation">-</span>restore
-    <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Test
-      <span class="token key atrule">run</span><span class="token punctuation">:</span> dotnet test <span class="token punctuation">-</span><span class="token punctuation">-</span>no<span class="token punctuation">-</span>build <span class="token punctuation">-</span><span class="token punctuation">-</span>verbosity normal
+    steps:
+    - uses: actions&#x2F;checkout@v3
+    - name: Setup .NET
+      uses: actions&#x2F;setup-dotnet@v2
+      with:
+        dotnet-version: 6.0.x
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet build --no-restore
+    - name: Test
+      run: dotnet test --no-build --verbosity normal
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>We don’t discuss detail of this yml file here, what are we gonna do is simply add a step after <code>Test</code>, whatever you name it.</p>
-<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Push package
-        <span class="token key atrule">run</span><span class="token punctuation">:</span> <span class="token punctuation">|</span><span class="token scalar string">
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">- name: Push package
+        run: |
           # Grab some versioning information
-          commithash=$(git rev-parse --short HEAD)
-          currtime=$(date +%s)
-          echo "commit hash is $commithash"
-          echo "time is $currtime"</span>
+          commithash&#x3D;$(git rev-parse --short HEAD)
+          currtime&#x3D;$(date +%s)
+          echo &quot;commit hash is $commithash&quot;
+          echo &quot;time is $currtime&quot;
 
-          <span class="token comment"># Enter project directory</span>
+          # Enter project directory
           cd Manganese
 
-          <span class="token comment"># Build package</span>
+          # Build package
           dotnet restore
           dotnet build
 
-          <span class="token comment"># Pack a nuget package with all the default config</span>
+          # Pack a nuget package with all the default config
           dotnet pack
 
-          <span class="token comment"># Enter package output directory</span>
-          cd bin/Debug
+          # Enter package output directory
+          cd bin&#x2F;Debug
 
-          <span class="token comment"># Getting file named with .nupkg extension</span>
-          file=""
-          cdir=`ls ./<span class="token important">*.nupkg`</span>
+          # Getting file named with .nupkg extension
+          file&#x3D;&quot;&quot;
+          cdir&#x3D;&#96;ls .&#x2F;*.nupkg&#96;
           for eachfile in $cdir
           do
-            file=$eachfile
+            file&#x3D;$eachfile
           done
         
-          <span class="token comment"># Push it to source "nuget"</span>
-          dotnet nuget push $file <span class="token punctuation">-</span><span class="token punctuation">-</span>api<span class="token punctuation">-</span>key $<span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span> secrets.NUGET_KEY  <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span> <span class="token punctuation">-</span><span class="token punctuation">-</span>source "nuget"<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+          # Push it to source &quot;nuget&quot;
+          dotnet nuget push $file --api-key $&#123;&#123; secrets.NUGET_KEY  &#125;&#125; --source &quot;nuget&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>Now you can simply push some stuff to your action branch, the action will run and push your package to nuget gallery.</p>
 
