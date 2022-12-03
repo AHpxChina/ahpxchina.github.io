@@ -56,7 +56,7 @@ categories: [Life]
 
 然后三月我还买了一部新手机，是红米K40，虽然当时马上就要出K50，但我经过很多的搜索确定K50不会产生更多的提升，并且当时K40价格非常之低，所以就入手了现在的这台顶配K40。
 
-![random](blob:https://imgur.com/fe83a00c-da21-437f-8545-31ad93ccf9e4)
+![random](https://i.imgur.com/ufAdnUs.jpg)
 
 ## 四月
 
