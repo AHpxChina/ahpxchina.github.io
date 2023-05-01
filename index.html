@@ -1,505 +1,1337 @@
 <!DOCTYPE html>
-<html>
-  <!-- Html Head Tag-->
-  <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="">
-  <meta name="author" content="AHpx">
-  <!-- Open Graph Data -->
-  <meta property="og:title" content="楼窗晚风"/>
-  <meta property="og:description" content="Movie, Rock, Book, Coding, My life" />
-  <meta property="og:site_name" content="楼窗晚风"/>
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://blog.ahpxchina.cn"/>
-  
-    <link rel="alternate" href="/atom.xml" title="楼窗晚风" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/img/AIcon.png">
-  
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="coding,sharing">
+    
+    <meta name="author" content="AHpx">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="https://blog.ahpxchina.cn/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+        <meta name="description" content="Movie, Rock, Book, Coding, My life">
+<meta property="og:type" content="website">
+<meta property="og:title" content="楼窗晚风">
+<meta property="og:url" content="https://blog.ahpxchina.cn/index.html">
+<meta property="og:site_name" content="楼窗晚风">
+<meta property="og:description" content="Movie, Rock, Book, Coding, My life">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="AHpx">
+<meta property="article:tag" content="coding">
+<meta property="article:tag" content="sharing">
+<meta name="twitter:card" content="summary">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/AIcon.png" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/AIcon.png">
+    <meta name="theme-color" content="#A31F34">
+    <link rel="shortcut icon" href="/images/AIcon.png">
+    <!--- Page Info-->
+    
+    <title>
+        
+        楼窗晚风
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
 
-  <!-- Site Title -->
-  <title>楼窗晚风</title>
+    
+<link rel="stylesheet" href="/assets/fonts.css">
 
-  <!-- Bootstrap CSS -->
-  
-<link rel="stylesheet" href="/css/bootstrap.min.css">
+    <!--- Font Part-->
+    
+    
+    
+    
 
-  <!-- Custom CSS -->
-  
-  
-<link rel="stylesheet" href="/css/style.light.css">
+    <!--- Inject Part-->
+    
+    <script id="hexo-configurations">
+    let Global = window.Global || {};
+    Global.hexo_config = {"hostname":"blog.ahpxchina.cn","root":"/","language":"en"};
+    Global.theme_config = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[""]},"code_block":{"copy":true,"style":"mac","font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":true,"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"busuanzi_counter":{"enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"pjax":true,"open_graph":true,"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/last_sunsetting_2021.png","dark":"/images/last_sunsetting_2021.png"},"title":"楼窗晚风","subtitle":{"text":[],"hitokoto":{"enable":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"links":{"github":null,"instagram":null,"zhihu":null,"twitter":null,"email":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.1.3","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"Works":{"path":"/works","icon":"fa-regular fa-briefcase"},"About":{"icon":"fa-regular fa-user","submenus":{"Me":"/about","Github":"https://github.com/SinoAHpx","Twitter":"https://twitter.com/AHpxEx","Friends":"/links"}}},"search":{"enable":true,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"links":null},"article_date_format":"auto","categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}}};
+    Global.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
 
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
 
-  <!-- Google Analytics -->
-  
-    <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
 
-        ga('create', 'G-89D6458WE7', 'auto');
-        ga('send', 'pageview');
-    </script>
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
 
-
+    
+    
+    
+    
 <meta name="generator" content="Hexo 5.4.2"></head>
 
-  <body>
-    <!-- Page Header -->
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="pjax-progress-icon">
+            <i class="fa-solid fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
 
 
-<header class="site-header header-background" style="background-image: url(/img/last_sunsetting_2021.png)">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="page-title with-background-image">
-          <p class="title">楼窗晚风</p>
-          <p class="subtitle">AHpx&#39;s Blog</p>
-        </div>
-        <div class="site-menu with-background-image">
-          <ul>
-            
-              <li>
-                <a href="/">
-                  
-                  Home
-                  
-                </a>
-              </li>
-            
-              <li>
-                <a href="/archives">
-                  
-                  Archives
-                  
-                </a>
-              </li>
-            
-              <li>
-                <a href="/works">
-                  
-                  Works
-                  
-                </a>
-              </li>
-            
-              <li>
-                <a href="/about">
-                  
-                  About
-                  
-                </a>
-              </li>
-            
-              <li>
-                <a href="/links">
-                  
-                  Links
-                  
-                </a>
-              </li>
-            
-          </ul>
-        </div>
-      </div>
+<main class="page-container">
+
+    
+        
+    <style>
+        .home-banner-container {
+            background: transparent !important;
+        }
+        .home-article-item,
+        .sidebar-links,
+        .sidebar-content,
+        a.page-number,
+        a.extend,
+        .sidebar-links .links:hover,
+        .right-bottom-tools,
+        footer.footer {
+            background-color: var(--background-color-transparent-80) !important;
+        }
+        .site-info,
+        .home-article-sticky-label {
+            background-color: var(--background-color-transparent-15) !important;
+        }
+        .home-article-sticky-label {
+            backdrop-filter: none !important;
+        }
+    </style>
+
+    <div class="home-banner-background">
     </div>
-  </div>
+
+
+<div class="home-banner-container flex-center">
+    <div class="content flex-center">
+        <div class="description fade-in-down-animation" >
+          楼窗晚风 
+          
+            <p><i id="subtitle"></i></p>
+          
+        </div>
+        
+    </div>
+</div>
+
+
+
+    
+
+    <div class="main-content-container">
+
+        <div class="main-content-header">
+            <header class="navbar-container">
+    
+    <div class="navbar-content has-home-banner">
+        <div class="left">
+            
+                <a class="logo-image" href="/">
+                    <img src="/images/AIcon.png">
+                </a>
+            
+            <a class="logo-title" href="/">
+                <h1>
+                楼窗晚风
+                </h1>
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="active" 
+                                    href="/"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-house"></i>
+                                        
+                                        HOME
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/archives"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-archive"></i>
+                                        
+                                        ARCHIVES
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/works"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-briefcase"></i>
+                                        
+                                        WORKS
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="has-dropdown" 
+                                    href="#" onClick="return false;">
+                                    
+                                        
+                                            <i class="fa-regular fa-user"></i>
+                                        
+                                        ABOUT&nbsp;<i class="fa-solid fa-chevron-down"></i>
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                                    <ul class="sub-menu">
+                                    
+                                        <li>
+                                        <a href="/about">ME
+                                        </a>
+                                        </li>
+                                    
+                                        <li>
+                                        <a target="_blank" rel="noopener" href="https://github.com/SinoAHpx">GITHUB
+                                        </a>
+                                        </li>
+                                    
+                                        <li>
+                                        <a target="_blank" rel="noopener" href="https://twitter.com/AHpxEx">TWITTER
+                                        </a>
+                                        </li>
+                                    
+                                        <li>
+                                        <a href="/links">FRIENDS
+                                        </a>
+                                        </li>
+                                    
+                                    </ul>
+                                
+                            </li>
+                    
+                    
+                        <li class="navbar-item search search-popup-trigger">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i></div>
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div class="navbar-drawer">
+        <ul class="drawer-navbar-list">
+            
+                
+                    <li class="drawer-navbar-item flex-center">
+                        <a class="active" 
+                        href="/"  >
+                             
+                                
+                                    <i class="fa-regular fa-house"></i>
+                                
+                                HOME
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-navbar-item flex-center">
+                        <a class="" 
+                        href="/archives"  >
+                             
+                                
+                                    <i class="fa-regular fa-archive"></i>
+                                
+                                ARCHIVES
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-navbar-item flex-center">
+                        <a class="" 
+                        href="/works"  >
+                             
+                                
+                                    <i class="fa-regular fa-briefcase"></i>
+                                
+                                WORKS
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-navbar-item flex-center">
+                        <a class="has-dropdown" 
+                        href="#" onClick="return false;">
+                            
+                                
+                                    <i class="fa-regular fa-user"></i>
+                                
+                                ABOUT&nbsp;<i class="fa-solid fa-chevron-down"></i>
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                              
+                        
+                            <li class="dropdown-item flex-center">
+                                <a class="dropdown-item" href="/about">ME</a>
+                            </li>
+                        
+                            <li class="dropdown-item flex-center">
+                                <a class="dropdown-item" target="_blank" rel="noopener" href="https://github.com/SinoAHpx">GITHUB</a>
+                            </li>
+                        
+                            <li class="dropdown-item flex-center">
+                                <a class="dropdown-item" target="_blank" rel="noopener" href="https://twitter.com/AHpxEx">TWITTER</a>
+                            </li>
+                        
+                            <li class="dropdown-item flex-center">
+                                <a class="dropdown-item" href="/links">FRIENDS</a>
+                            </li>
+                        
+                    
+            
+
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
 </header>
 
-<!-- Home Page Post List -->
-<div class="container">
-  <div class="row">
-    <div class="col-lg-10 col-md-10 col-md-offset-1">
-      
-        <div class="post-item-wrapper">
-  <a href="/2023/01/18/ModuleIntializer-in-CSharp/" class="post-title">
-      ModuleIntializer in CSharp
-  </a>
-  <div class="post-excerpt">
-    <!-- Post Date and Categories -->
-    <div class="date-and-category">
-      <div class="date">2023-01-19</div>
-      <div class="categories">
-        
-          
 
-<a href="/categories/dev/">dev</a>
+        </div>
 
+        <div class="main-content-body">
+
+            
+                <div class="home-sidebar-container fade-in-down-animation">
+    <div class="sticky-container">
         
-      </div>
+            
+            <div class="sidebar-content" >
+                <div class="avatar">
+                    <img src="https://q1.qlogo.cn/g?b=qq&nk=2933170747&s=640">
+                </div>
+                <div class="author">
+                    <div class="name">AHpx</div>
+                    
+                        <div class="label"></div>
+                    
+                </div>
+                <div class="statistics">
+                    <a class="item" href="/tags">
+                        <div class="number">18</div>
+                        <div class="label">Tags</div>
+                    </a>
+                    <a class="item" href="/categories">
+                        <div class="number">7</div>
+                        <div class="label">Categories</div>
+                    </a>
+                    <a class="item" href="/archives">
+                        <div class="number">13</div>
+                        <div class="label">Posts</div>
+                    </a>
+                </div>
+            </div>
+        
+
     </div>
-    <!-- Post Excerpt -->
-    <div class="excerpt typo">No Post Excerpt</div>
-    <!-- Post Tags -->
-    <div class="tags">
-      
-        
-
-<a class="tag" href="/tags/CSharp/">CSharp</a>
-
-
-      
-    </div>
-  </div>
 </div>
 
-      
-        <div class="post-item-wrapper">
-  <a href="/2022/12/02/2022-Summary/" class="post-title">
-      2022 年末回览
-  </a>
-  <div class="post-excerpt">
-    <!-- Post Date and Categories -->
-    <div class="date-and-category">
-      <div class="date">2022-12-03</div>
-      <div class="categories">
-        
-          
+            
 
-<a href="/categories/Life/">Life</a>
+            <div class="main-content">
 
+                
+                    <div class="home-content-container fade-in-down-animation">
+    <ul class="home-article-list">
         
-      </div>
+            <li class="home-article-item">
+
+                
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2023/04/30/Badminton-Prose-Sea/">
+                        羽毛球，散文诗，大海
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        前言最近在读王小波，所以我爱上了他写作的风格，我很喜欢向他那样的写字，至少现在也可以把我称作是一个不入流的模仿者之云云。但我没有系统性地总结过他的文字，大概就是因为这样才是“不入流”。不管怎么样，我很喜欢这样写字，这给我一种自由的感觉，至少比我之前的...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Sun Apr 30 2023 13:49:22 GMT+0800">
+                
+                    2023-04-30
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category"><i class="fa-solid fa-folders"></i></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/Prose/">Prose</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/Prose/">Prose</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
     </div>
-    <!-- Post Excerpt -->
-    <div class="excerpt typo">No Post Excerpt</div>
-    <!-- Post Tags -->
-    <div class="tags">
-      
-        
 
-<a class="tag" href="/tags/Life/">Life</a>
-
-
-      
-    </div>
-  </div>
+    <a href="/2023/04/30/Badminton-Prose-Sea/">Read more<span class="seo-reader-text">羽毛球，散文诗，大海</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
-      
-        <div class="post-item-wrapper">
-  <a href="/2022/07/27/Automatically-deploy-nuget-package-via-GitHub-Actions/" class="post-title">
-      Automatically deploy nuget package via GitHub Actions
-  </a>
-  <div class="post-excerpt">
-    <!-- Post Date and Categories -->
-    <div class="date-and-category">
-      <div class="date">2022-07-27</div>
-      <div class="categories">
-        
-          
-
-<a href="/categories/dev/">dev</a>
-
-        
-      </div>
-    </div>
-    <!-- Post Excerpt -->
-    <div class="excerpt typo">No Post Excerpt</div>
-    <!-- Post Tags -->
-    <div class="tags">
-      
-        
-
-<a class="tag" href="/tags/CSharp/">CSharp</a> <a class="tag" href="/tags/Nuget/">Nuget</a>
-
-
-      
-    </div>
-  </div>
-</div>
-
-      
-        <div class="post-item-wrapper">
-  <a href="/2022/07/21/%E5%A6%82%E4%BD%95%E6%94%B9%E5%8F%98%E4%BD%A0%E7%9A%84%E5%90%8D%E5%AD%97/" class="post-title">
-      如何改变你的名字
-  </a>
-  <div class="post-excerpt">
-    <!-- Post Date and Categories -->
-    <div class="date-and-category">
-      <div class="date">2022-07-21</div>
-      <div class="categories">
-        
-          
-
-<a href="/categories/%E7%A4%BE%E4%BC%9A%E7%94%9F%E6%B4%BB/">社会生活</a>
-
-        
-      </div>
-    </div>
-    <!-- Post Excerpt -->
-    <div class="excerpt typo">No Post Excerpt</div>
-    <!-- Post Tags -->
-    <div class="tags">
-      
-        
-
-<a class="tag" href="/tags/%E6%9D%82%E8%B0%88/">杂谈</a> <a class="tag" href="/tags/%E7%94%9F%E6%B4%BB/">生活</a>
-
-
-      
-    </div>
-  </div>
-</div>
-
-      
-        <div class="post-item-wrapper">
-  <a href="/2022/06/06/There-should-be-exactly-one-item-with-DropdownButtonFormField-s-value/" class="post-title">
-      Solving: There should be exactly one item with [DropdownButtonFormField]&#39;s value
-  </a>
-  <div class="post-excerpt">
-    <!-- Post Date and Categories -->
-    <div class="date-and-category">
-      <div class="date">2022-06-06</div>
-      <div class="categories">
-        
-          
-
-<a href="/categories/dev/">dev</a>
-
-        
-      </div>
-    </div>
-    <!-- Post Excerpt -->
-    <div class="excerpt typo">No Post Excerpt</div>
-    <!-- Post Tags -->
-    <div class="tags">
-      
-        
-
-<a class="tag" href="/tags/flutter/">flutter</a> <a class="tag" href="/tags/dart/">dart</a> <a class="tag" href="/tags/ui/">ui</a>
-
-
-      
-    </div>
-  </div>
-</div>
-
-      
-        <div class="post-item-wrapper">
-  <a href="/2022/04/16/From-view-of-WPF-developer-talking-something-about-Flutter/" class="post-title">
-      From view of WPF developer - talking something about Flutter (1)
-  </a>
-  <div class="post-excerpt">
-    <!-- Post Date and Categories -->
-    <div class="date-and-category">
-      <div class="date">2022-04-16</div>
-      <div class="categories">
-        
-          
-
-<a href="/categories/dev/">dev</a>
-
-        
-      </div>
-    </div>
-    <!-- Post Excerpt -->
-    <div class="excerpt typo">No Post Excerpt</div>
-    <!-- Post Tags -->
-    <div class="tags">
-      
-        
-
-<a class="tag" href="/tags/CSharp/">CSharp</a> <a class="tag" href="/tags/WPF/">WPF</a> <a class="tag" href="/tags/UI/">UI</a> <a class="tag" href="/tags/Flutter/">Flutter</a>
-
-
-      
-    </div>
-  </div>
-</div>
-
-      
-        <div class="post-item-wrapper">
-  <a href="/2022/04/13/Permanently%20add%20environment%20variables%20on%20Fedora%20linux/" class="post-title">
-      Permanently add environment variables on Fedora linux
-  </a>
-  <div class="post-excerpt">
-    <!-- Post Date and Categories -->
-    <div class="date-and-category">
-      <div class="date">2022-04-13</div>
-      <div class="categories">
-        
-          
-
-<a href="/categories/system/">system</a>
-
-        
-      </div>
-    </div>
-    <!-- Post Excerpt -->
-    <div class="excerpt typo">No Post Excerpt</div>
-    <!-- Post Tags -->
-    <div class="tags">
-      
-        
-
-<a class="tag" href="/tags/Linux/">Linux</a> <a class="tag" href="/tags/Fedora/">Fedora</a>
-
-
-      
-    </div>
-  </div>
-</div>
-
-      
-        <div class="post-item-wrapper">
-  <a href="/2021/08/27/How%20to%20fix%20the%20problem%20that%20process.Exited%20handler%20will%20not%20execute/" class="post-title">
-      How to fix the problem that process.Exited handler will not execute
-  </a>
-  <div class="post-excerpt">
-    <!-- Post Date and Categories -->
-    <div class="date-and-category">
-      <div class="date">2021-08-27</div>
-      <div class="categories">
-        
-          
-
-<a href="/categories/dev/">dev</a>
-
-        
-      </div>
-    </div>
-    <!-- Post Excerpt -->
-    <div class="excerpt typo">No Post Excerpt</div>
-    <!-- Post Tags -->
-    <div class="tags">
-      
-        
-
-<a class="tag" href="/tags/CSharp/">CSharp</a>
-
-
-      
-    </div>
-  </div>
-</div>
-
-      
-        <div class="post-item-wrapper">
-  <a href="/2021/08/27/Dynamically%20convert%20JSON%20to%20CSharp%20object/" class="post-title">
-      Dynamically convert JSON to C# object(Chinese)
-  </a>
-  <div class="post-excerpt">
-    <!-- Post Date and Categories -->
-    <div class="date-and-category">
-      <div class="date">2021-08-27</div>
-      <div class="categories">
-        
-          
-
-<a href="/categories/dev/">dev</a>
-
-        
-      </div>
-    </div>
-    <!-- Post Excerpt -->
-    <div class="excerpt typo">No Post Excerpt</div>
-    <!-- Post Tags -->
-    <div class="tags">
-      
-        
-
-<a class="tag" href="/tags/CSharp/">CSharp</a>
-
-
-      
-    </div>
-  </div>
-</div>
-
-      
-        <div class="post-item-wrapper">
-  <a href="/2021/08/27/How%20to%20build%20a%20document%20website%20via%20Vuepress/" class="post-title">
-      How to Build a document site by Vuepress
-  </a>
-  <div class="post-excerpt">
-    <!-- Post Date and Categories -->
-    <div class="date-and-category">
-      <div class="date">2021-08-27</div>
-      <div class="categories">
-        
-          
-
-<a href="/categories/web/">web</a>
-
-        
-      </div>
-    </div>
-    <!-- Post Excerpt -->
-    <div class="excerpt typo">No Post Excerpt</div>
-    <!-- Post Tags -->
-    <div class="tags">
-      
-        
-
-<a class="tag" href="/tags/VuePress/">VuePress</a> <a class="tag" href="/tags/documenting/">documenting</a>
-
-
-      
-    </div>
-  </div>
-</div>
-
-      
-    </div>
-  </div>
-</div>
-
-<!-- Pagination -->
-<div class="container">
-  <div class="row">
-    <div class="col-lg-10 col-md-10 col-md-offset-1">
-      <ul class="pagination">
-          
-          
-            <li class="next">
-              <a href="/page/2/">
-                <span>NEXT</span>
-                <span class="symbol-right">&gt;</span>
-              </a>
             </li>
-          
-      </ul>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2023/01/18/ModuleIntializer-in-CSharp/">
+                        ModuleIntializer in CSharp
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        Refer to Module Initializer documentation, the ModuleInitializer is a useful attribute, which enable your program run somethi...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Thu Jan 19 2023 07:00:04 GMT+0800">
+                
+                    2023-01-19
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category"><i class="fa-solid fa-folders"></i></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/dev/">dev</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/CSharp/">CSharp</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
     </div>
-  </div>
+
+    <a href="/2023/01/18/ModuleIntializer-in-CSharp/">Read more<span class="seo-reader-text">ModuleIntializer in CSharp</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2022/12/02/2022-Summary/">
+                        2022 年末回览
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        思绪乱七八糟，思考半天也没憋出一句像样的话，那几干脆抛弃那些书面用语的条条框框，用口语化的随意的（其实也没那么随意）的口吻来完成这篇年终总结吧。图片几乎都和文字关系不大，但都是对应的月份拍的，选择的标准是我所觉得的“有意思”。
+现在播放的是 CASI...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Sat Dec 03 2022 04:40:33 GMT+0800">
+                
+                    2022-12-03
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category"><i class="fa-solid fa-folders"></i></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/Life/">Life</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/Life/">Life</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2022/12/02/2022-Summary/">Read more<span class="seo-reader-text">2022 年末回览</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2022/07/27/Automatically-deploy-nuget-package-via-GitHub-Actions/">
+                        Automatically deploy nuget package via GitHub Actions
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        BackgroundRecently I have complaint about Nuget gallery’s stupid design that you have to re-sign in to upload a new package e...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Wed Jul 27 2022 10:17:59 GMT+0800">
+                
+                    2022-07-27
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category"><i class="fa-solid fa-folders"></i></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/dev/">dev</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/CSharp/">CSharp</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/Nuget/">Nuget</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2022/07/27/Automatically-deploy-nuget-package-via-GitHub-Actions/">Read more<span class="seo-reader-text">Automatically deploy nuget package via GitHub Actions</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2022/07/21/%E5%A6%82%E4%BD%95%E6%94%B9%E5%8F%98%E4%BD%A0%E7%9A%84%E5%90%8D%E5%AD%97/">
+                        如何改变你的名字
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        前言
+不管你是因为什么需要改变伴随你多年的名字，我都祝你好运。
+
+我是云南人，因此这篇文章中的所有内容有可能只适用于云南，甚至在云南不同的地方也可能会有所不同，我希望它可以对所有人起到参考作用，但你可能需要根据实际情况做出一些调整。
+前提
+身份证
+户...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Thu Jul 21 2022 19:00:28 GMT+0800">
+                
+                    2022-07-21
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category"><i class="fa-solid fa-folders"></i></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/%E7%A4%BE%E4%BC%9A%E7%94%9F%E6%B4%BB/">社会生活</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E6%9D%82%E8%B0%88/">杂谈</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/%E7%94%9F%E6%B4%BB/">生活</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2022/07/21/%E5%A6%82%E4%BD%95%E6%94%B9%E5%8F%98%E4%BD%A0%E7%9A%84%E5%90%8D%E5%AD%97/">Read more<span class="seo-reader-text">如何改变你的名字</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2022/06/06/There-should-be-exactly-one-item-with-DropdownButtonFormField-s-value/">
+                        Solving: There should be exactly one item with [DropdownButtonFormField]&#39;s value
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        ScenarioCoding a app with a two DropdownButtonFormField, which choose certain value from the first one, and represent specifi...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Mon Jun 06 2022 16:18:28 GMT+0800">
+                
+                    2022-06-06
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category"><i class="fa-solid fa-folders"></i></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/dev/">dev</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/flutter/">flutter</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/dart/">dart</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/ui/">ui</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2022/06/06/There-should-be-exactly-one-item-with-DropdownButtonFormField-s-value/">Read more<span class="seo-reader-text">Solving: There should be exactly one item with [DropdownButtonFormField]&#39;s value</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2022/04/16/From-view-of-WPF-developer-talking-something-about-Flutter/">
+                        From view of WPF developer - talking something about Flutter (1)
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        PrologueRecently I have read Dart documentation and have a glance at the Flutter framework, which is a cross-platform UI fram...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Sat Apr 16 2022 15:41:00 GMT+0800">
+                
+                    2022-04-16
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category"><i class="fa-solid fa-folders"></i></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/dev/">dev</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/CSharp/">CSharp</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/WPF/">WPF</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/UI/">UI</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2022/04/16/From-view-of-WPF-developer-talking-something-about-Flutter/">Read more<span class="seo-reader-text">From view of WPF developer - talking something about Flutter (1)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2022/04/13/Permanently%20add%20environment%20variables%20on%20Fedora%20linux/">
+                        Permanently add environment variables on Fedora linux
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        BackgroundI’m trying to be a Linux-cool guy recently, to be honest, Linux is too much tougher than Windows, but also being ho...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Wed Apr 13 2022 23:40:00 GMT+0800">
+                
+                    2022-04-13
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category"><i class="fa-solid fa-folders"></i></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/system/">system</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/Linux/">Linux</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/Fedora/">Fedora</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2022/04/13/Permanently%20add%20environment%20variables%20on%20Fedora%20linux/">Read more<span class="seo-reader-text">Permanently add environment variables on Fedora linux</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2021/08/27/How%20to%20fix%20the%20problem%20that%20process.Exited%20handler%20will%20not%20execute/">
+                        How to fix the problem that process.Exited handler will not execute
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        As the code below:
+var path &#x3D; @&quot;xxx.exe&quot;;
+
+var process &#x3D; new Process
+&#123;
+    StartInfo &#x3D; new Proc...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Fri Aug 27 2021 22:22:00 GMT+0800">
+                
+                    2021-08-27
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category"><i class="fa-solid fa-folders"></i></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/dev/">dev</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/CSharp/">CSharp</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2021/08/27/How%20to%20fix%20the%20problem%20that%20process.Exited%20handler%20will%20not%20execute/">Read more<span class="seo-reader-text">How to fix the problem that process.Exited handler will not execute</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2021/08/27/Dynamically%20convert%20JSON%20to%20CSharp%20object/">
+                        Dynamically convert JSON to C# object(Chinese)
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        Scenario最近在重构一个mirai-api-http的C#包装器，好尝试一些以前没有使用过的技术（比如Rx.Net的IObservable接口什么的）。所以我对一些旧有的实现方式进行了一些思考。这篇文章要探讨的场景就是下面这张图片，我们该如何以...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Fri Aug 27 2021 22:00:00 GMT+0800">
+                
+                    2021-08-27
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category"><i class="fa-solid fa-folders"></i></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/dev/">dev</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/CSharp/">CSharp</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2021/08/27/Dynamically%20convert%20JSON%20to%20CSharp%20object/">Read more<span class="seo-reader-text">Dynamically convert JSON to C# object(Chinese)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+    </ul>
+
+    <div class="home-paginator">
+        <div class="paginator">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa-regular fa-angle-right"></i></a>
+</div>
+
+    </div>
+</div>
+
+                
+
+            </div>
+            
+            
+
+        </div>
+
+        <div class="main-content-footer">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info">
+            &copy;
+            
+              <span>2021</span>
+              -
+            
+            2023&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">AHpx</a>
+        </div>
+        
+            <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv" class="busuanzi_container_site_uv">
+                        VISITOR COUNT&nbsp;<span id="busuanzi_value_site_uv" class="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="busuanzi_container_site_pv">
+                        TOTAL PAGE VIEWS&nbsp;<span id="busuanzi_value_site_pv" class="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            <span class="powered-by-container">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" href="https://hexo.io">Hexo</a></span>
+                <br>
+            <span class="theme-version-container">THEME&nbsp;<a class="theme-version" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.1.3</a>
+        </div>
+        
+        
+        
+            <div id="start_div" style="display:none">
+                2021/3/30 16:57:00
+            </div>
+            <div>
+                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
+            </div>
+        
+        
+        
+            <script async data-pjax>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+        </div>
+    </div>
+
+    
+
+    <div class="right-side-tools-container">
+        <div class="side-tools-container">
+    <ul class="hidden-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex-center">
+            <i class="fa-regular fa-magnifying-glass-plus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-font-adjust-minus flex-center">
+            <i class="fa-regular fa-magnifying-glass-minus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-expand-width flex-center">
+            <i class="fa-regular fa-expand"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-dark-light-toggle flex-center">
+            <i class="fa-regular fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="right-bottom-tools tool-scroll-to-bottom flex-center">
+            <i class="fa-regular fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="visible-tools-list">
+        <li class="right-bottom-tools toggle-tools-list flex-center">
+            <i class="fa-regular fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="right-bottom-tools tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="image-viewer-container">
+    <img src="">
 </div>
 
 
-
-    <!-- Footer -->
-<footer>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <p class="copyright text-muted">
-          Theme By <a target="_blank" href="https://github.com/levblanc">Levblanc.</a>
-          Inspired By <a target="_blank" href="https://github.com/klugjo/hexo-theme-clean-blog">Clean Blog.</a>
-        <p class="copyright text-muted">
-          Powered By <a target="_blank" href="https://hexo.io/">Hexo.</a>
-        </p>
-      </div>
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fa-solid fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fa-solid fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
     </div>
-  </div>
-</footer>
+</div>
+
+    
 
 
-    <!-- After Footer Scripts -->
+</main>
 
-<script src="/js/highlight.pack.js"></script>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/layouts/navbarShrink.js"></script>
+
+<script src="/js/tools/scrollTopBottom.js"></script>
+
+<script src="/js/tools/lightDarkSwitch.js"></script>
+
+
+
+    
+<script src="/js/tools/localSearch.js"></script>
+
+
+
+
+    
+<script src="/js/tools/codeBlock.js"></script>
+
+
+
+
+    
+<script src="/js/layouts/lazyload.js"></script>
+
+
+
+
+    
+<script src="/js/tools/runtime.js"></script>
+
+    
+<script src="/js/layouts/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/js/libs/Typed.min.js"></script>
+
+  
+<script src="/js/plugins/typed.js"></script>
+
+
+
+
+
+
+    
+<script src="/js/tools/scrollBlur.js"></script>
+
+
+
+
+<div class="post-scripts pjax">
+    
+</div>
+
+
+    
+<script src="/js/libs/pjax.min.js"></script>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function(event) {
-    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
-    codeBlocks.forEach(function(block, index) {
-      hljs.highlightBlock(block);
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax',
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            Global.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            Global.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            Global.refresh();
+        });
     });
-  });
 </script>
 
-  </body>
-</html>
 
+
+
+</body>
+</html>
