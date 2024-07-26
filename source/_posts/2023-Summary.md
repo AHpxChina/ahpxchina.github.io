@@ -5,7 +5,6 @@ cover: false
 toc: true
 mathjax: true
 date: 2023-12-03 02:30:47
-hidden: true
 password:
 summary: 2023 年却也这么离开。
 tags: Life
