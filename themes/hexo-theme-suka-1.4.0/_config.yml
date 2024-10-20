@@ -202,10 +202,10 @@ comment:
     firebase_project_id:
     firebase_storage_bucket:
     firebase_messaging_sender_id:
-    theme: light # light or dark
+    theme: dark # light or dark
     locale: en # en or zh-CN
   facebook:
-    colorschme: light # light | dark
+    colorschme: dark # light | dark
     numposts: 10
     orderby: social # social | reverse_time | time
     # You can only fill in one of them below when configuring.
