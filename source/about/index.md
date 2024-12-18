@@ -3,12 +3,12 @@ title: About
 date: 2021-04-02 23:42:50
 ---
 
-### 关于我
+### 关于
 
-- 中国社会科学院大学社会学专业在读。
-- .NET 用户，正在向全栈开发方向转型。
+- 中国社会科学院大学社会学专业，定量分析/计算社会学。
+- TypeScript/Python/.NET
 
-### 哪里去找
+### 联络
 
 - 邮箱: [AHpx@yandex.com](mailto:AHpx@yandex.com)
-- Mastodon: [@AHpx@expressional.social](https://expressional.social/@AHpx)
+- Twitter: [破晓](https://twitter.com/AHpxEx)
